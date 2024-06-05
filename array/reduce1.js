@@ -1,6 +1,8 @@
-// TODO: See the link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+/**
+ * TODO: See the link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+ */
 
-onst alunos = [
+const alunos = [
     {name: 'João', nota: 7.3, bolsista: false},
     {name: 'Maria', nota: 9.2, bolsista: true},    
     {name: 'Pedro', nota: 9.8, bolsista: false},
