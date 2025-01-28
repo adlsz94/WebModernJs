@@ -14,12 +14,10 @@
  */
 
  // Com promise
- const { error } = require('console')
+
 const http = require('http')
-const { reject } = require('lodash')
-const { resolve } = require('path')
  
- const getTurma = (letra) => {
+const getTurma = (letra) => {
      // template string
      const url = `http://files.cod3r.com.br/curso-js/turma${letra}.json`
      return new Promise((resolve, reject) => {
