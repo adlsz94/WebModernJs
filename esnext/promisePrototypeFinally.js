@@ -1,6 +1,8 @@
 /**
  *? Promise.prototype.finally
  * 
+ ** finally() is an ECMAScript 2018 feature.
+ * 
  * TODO: See the links below:
  * 
  ** https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally
