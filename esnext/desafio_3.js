@@ -5,6 +5,7 @@ const path = require('path')
 
 async function lerArquivo() {
   try {
+    // diretorio atual(esnext/dados1.txt)    
     const caminho = path.join(__dirname, 'dados1.txt')// procura o arquivo no diretorio atual.
     const conteudo = await fs.promises.readFile(caminho, 'utf8')// Lerá o arquivo no diretorio
     console.log(conteudo)
@@ -14,6 +15,8 @@ async function lerArquivo() {
 }
 
 lerArquivo()
+
+
 /**
  * Expected output:
  * Desafio_3
