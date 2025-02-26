@@ -58,7 +58,7 @@
  **    não tendo, portanto, razão para fornecê-lo.
  * 
  ** - Diferentemente de
- **    Promise.resolve(2).then(() => {}, () => {}) (será relovido como undefined),
+ **    Promise.resolve(2).then(() => {}, () => {}) (será resolvido como undefined),
  **    Promise.resolve(2).finally(() => {}) será relovido como 2.
  *    
  **  - De maneira semelhante, diferentemente de 

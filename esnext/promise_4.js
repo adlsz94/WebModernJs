@@ -25,6 +25,15 @@ function gerarNumerosEntre(min, max, tempo){
     })
 }
 
+/**
+ *? Promise.all()
+ * 
+ * TODO: See the link below:
+ * 
+ ** https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+ * 
+ */
+
 function gerarVariosNumemors() {
     return Promise.all([
         gerarNumerosEntre(1, 60, 4000),
@@ -36,4 +45,15 @@ function gerarVariosNumemors() {
     ])
 }
 
-gerarVariosNumemors().then(numeros => console.log(numeros))
+gerarVariosNumemors()
+    .then(numeros => console.log(numeros))
+// Expect output some like this: [ 49, 29, 48, 39, 7, 39 ]
+
+console.time('promise')
+
+gerarNumerosEntre()
+    .then(numeros => console.log(numeros))
+    .then(() => {
+        console.timeLog('promise')
+        console.timeEnd('promise')
+    })
