@@ -1,0 +1,53 @@
+/* Para estilizar uma tag através do id, começe com #.
+   Para estilizr uma tag através do class, comece com (.).
+   EXEMPLO:
+   .fundoVermelho
+   #textoPrincipal
+
+*/
+h1 {
+    background-color: blue;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.fundoVermelho {
+    background-color: red;
+    padding: 10px;
+    font-size: 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.fundoVermelho.negrito {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#textoPrincipal {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    background-color: red;
+    border-radius: 10px;
+}
+
+#link {
+    font-weight: bold;
+    padding: 10px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    font-size: 40px;    ;
+}
+
+
