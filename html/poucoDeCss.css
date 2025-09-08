@@ -24,7 +24,7 @@ h1 {
 
 }
 
-.fundoVermelho.negrito {
+.fundoVermelho negrito {
     font-size: 40px;
     font-weight: bold;
     color: white;
