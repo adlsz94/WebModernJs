@@ -1,0 +1,101 @@
+<!-- AULA 221 -->
+
+<h1>Links</h1>
+
+<!-- URL Absoluta
+    Definição: É o endereço completo de um recurso na web, 
+    incluindo o protocolo (http:// ou https://), o domínio e o caminho completo até o arquivo.
+
+Exemplo:
+
+html
+<a href="https://www.google.com">Google</a>
+Uso típico: Quando você quer apontar para um site externo ou
+garantir que o link funcione independentemente de onde o HTML esteja hospedado.
+-->
+<a href="https://www.google.com.br">Google 1</a><br>
+<a href="https://www.google.com.br" target="_blank">Google 2</a><br><br>
+
+<!-- URL Relativa
+Definição: 
+    É um caminho que depende da localização atual do arquivo HTML. 
+    Ele não inclui o domínio nem o protocolo.
+
+Exemplo:
+
+html
+<a href="../index.html">Voltar para a página principal</a>
+Uso típico: Para navegar entre páginas dentro do mesmo projeto ou site, 
+especialmente durante o desenvolvimento local.
+
+Comparando com seu projeto local
+Você está acessando:
+
+Código
+http://127.0.0.1:5500/html/exercicios/links.html
+
+Se quiser:
+
+Objetivo	                    -   URL Relativa	        - URL Absoluta
+Ir para html/index.html	        -   ../index.html	        - http://127.0.0.1:5500/html/index.html
+Ir para a raiz do servidor (/)  -   /index.html	            - http://127.0.0.1:5500/index.html
+Ir para o Google	            -   https://www.google.com  - https://www.google.com
+💡 
+Dica prática
+Use URL relativa para links internos (mais flexível e portátil).
+
+Use URL absoluta para links externos ou quando quiser garantir o caminho completo.
+-->
+
+<a href="index.html">Voltar 1</a><br><!--Ficar em html/exercicios/index.html 
+                    (neste caso, não exste o arquivo index.html na pasta exercicios/)-->
+<a href="./index.html">Voltar 2</a><br><!-- Ficar em html/exercicios/index.html
+                    (neste caso, não existe o arquivo index.html na pasta exercicios/)-->
+<a href="../index.html">Voltar 3</a><br><!-- Ir para html/index.html-->
+<a href="/index.html">Voltar 4</a><br><!-- Ir para a raiz do servidor (index.html fora da 
+                                        pasta html)-->
+
+<!--Com base no arquivo atual
+ http://127.0.0.1:5500/html/exercicios/links.html
+
+_ index.html: Procura o arquivo no mesmo diretório do arquivo atual.
+  Vai buscar index.html em html/exercicios/ ;
+ 
+_ /index.html: Caminho absoluto a partir da raiz do servidor.
+    Vai buscar index.html direto em http://127.0.0.1:5500/index.html ;
+
+_ ./index.html: Também aponta para o diretório atual(igual ao anterior).
+    Mesmo efeito que index.html.
+
+_ ../index.html: Sobe um nível na hierarquia de pastas.
+    Vai buscar index.html dentro de html/
+
+__Dica Prática: 
+    _ Use ../ para subir pastas;
+
+    _ Use ./ ou nada para ficar na mesma pasta;
+
+    _ Use / quando quiser ir direto à raiz do servidor - útil em sites
+        hospedados.
+
+index.html
+    Significa: procurar o arquivo index.html no mesmo diretório onde está o arquivo atual.
+
+    _ A partir de html/: se você estiver em html/index.html, esse caminho funciona.
+
+    _ Se estiver em html/exercicios/, esse caminho procura html/exercicios/index.html.
+
+./index.html
+    Significa: o mesmo que acima — ./ representa o diretório atual.
+
+    _ A partir de html/: acessa html/index.html.
+
+    _ Se estiver em html/exercicios/, acessa html/exercicios/index.html.
+
+../index.html
+    Significa: subir um nível na hierarquia de pastas.
+
+    _ A partir de html/exercicios/: sobe para html/ e acessa html/index.html.
+
+    _ Se estiver em html/, sobe para a raiz do projeto e acessa index.html fora da pasta html.
+ -->
