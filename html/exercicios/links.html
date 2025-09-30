@@ -13,7 +13,7 @@ html
 Uso típico: Quando você quer apontar para um site externo ou
 garantir que o link funcione independentemente de onde o HTML esteja hospedado.
 -->
-<a href="https://www.google.com.br">Google 1</a><br>
+<a id="inicio" href="https://www.google.com.br">Google 1</a><br>
 <a href="https://www.google.com.br" target="_blank">Google 2</a><br><br>
 
 <!-- URL Relativa
@@ -46,14 +46,24 @@ Use URL relativa para links internos (mais flexível e portátil).
 
 Use URL absoluta para links externos ou quando quiser garantir o caminho completo.
 -->
-
+<!-- URL Relativa-->
 <a href="index.html">Voltar 1</a><br><!--Ficar em html/exercicios/index.html 
                     (neste caso, não exste o arquivo index.html na pasta exercicios/)-->
 <a href="./index.html">Voltar 2</a><br><!-- Ficar em html/exercicios/index.html
                     (neste caso, não existe o arquivo index.html na pasta exercicios/)-->
 <a href="../index.html">Voltar 3</a><br><!-- Ir para html/index.html-->
-<a href="/index.html">Voltar 4</a><br><!-- Ir para a raiz do servidor (index.html fora da 
+<a href="/index.html">Voltar 4</a><br><br><!-- Ir para a raiz do servidor (index.html fora da 
                                         pasta html)-->
+
+<a href="mailto:email@empresa.com.br">Entre em contato</a><br><br>
+
+<div id="noticia" style="position:absolute; top: 2000px">
+    <h1>Notícia Buemba!</h1>
+    <p>Não era nada</p>
+    <a href="#inicio">Voltar ao Início</a>
+</div>
+
+<a href="#noticia">Ir para a notícia</a>
 
 <!--Com base no arquivo atual
  http://127.0.0.1:5500/html/exercicios/links.html
@@ -98,4 +108,109 @@ index.html
     _ A partir de html/exercicios/: sobe para html/ e acessa html/index.html.
 
     _ Se estiver em html/, sobe para a raiz do projeto e acessa index.html fora da pasta html.
+
+ÂNCORA (ID)
+    Significa: navegar para um ponto específico dentro da mesma página.
+
+    _ Se você tiver um elemento com id="noticia", o link <a href="#noticia"> 
+        levará até esse ponto na página.
+
+    _ Útil para páginas longas onde você quer facilitar a navegação interna.
+
+Como funciona a âncora
+
+ Link para outra página
+
+html
+
+<a href="https://www.exemplo.com">Visite o site</a>
+ - href define o destino do link.
+
+ - O texto entre <a> e </a> é o que aparece clicável.
+
+ Link para uma parte da mesma página
+
+ Defina um id no elemento de destino:
+
+html
+<h2 id="sobre">Sobre nós</h2>
+
+Crie o link com href="#id":
+
+html
+
+<a href="#sobre">Ir para Sobre nós</a>
+
+ - O # indica que é um link interno, 
+ e o navegador rola até o elemento com o id correspondente.
+
+ Voltar ao topo
+
+html
+
+<a href="#topo">Voltar ao topo</a>
+
+E no topo da página:
+
+html
+
+<div id="topo"></div>
+
+ Observação sobre ÂNCORA: 
+ - Quando você fizer uma submissao e enviar isto para o backend,
+
+ Atributos úteis
+
+target="_blank": abre o link em nova aba.
+
+rel="nofollow": diz aos buscadores para não seguir o link (útil para SEO).
+
+Âncoras em HTML: Navegação no Frontend
+
+ A âncora (<a>) é usada para criar links que:
+
+ - Levam o usuário a outra página ou seção;
+
+ - Disparam ações como downloads ou chamadas para APIs
+
+ - Podem conter parâmetros na URL que o backend interpreta
+
+Exemplo:
+
+html
+
+<a href="/produtos?id=42">Ver produto</a>
+
+Esse link envia o usuário para a rota /produtos com o parâmetro id=42, 
+que o backend pode usar para buscar dados no banco.
+
+ Backend: Interpretando a âncora
+
+ Embora o backend não veja âncoras internas (como #sobre), 
+ ele processa URLs que vêm de <a href="...">, especialmente quando:
+
+ - Há parâmetros de consulta (?id=42)
+
+ - O link aponta para uma rota dinâmica (/usuario/paulo)
+
+ - O clique no link dispara uma requisição HTTP (GET, POST, etc.)
+
+No backend (Node.js, Python, PHP, etc.), você pode capturar esses dados:
+
+Exemplo com Node.js (Express):
+
+js
+
+    app.get('/produtos', (req, res) => {
+    const id = req.query.id;
+    // Buscar produto no banco com esse ID
+    res.send(`Produto ${id}`);
+    });
+
+ Observação importante
+
+ - O fragmento da âncora (#alguma-coisa) não é enviado ao servidor. 
+   Ele é tratado somente pelo navegador, útil para navegação interna.
+
+ - Se quiser que o backend reaja a algo parecido, use parâmetros na URL ou rotas específicas.
  -->
