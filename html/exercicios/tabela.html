@@ -1,0 +1,172 @@
+<!-- AULA 223 Tabela_<table> tag
+
+To do see the links below:
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/colSpan
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/rowSpan
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/
+
+https://www.w3schools.com/html/html_tables.asp
+
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
+
+Here’s a quick guide to creating tables in HTML.
+
+ Basic HTML Table Structure
+
+html
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Idade</th>
+    <th>Cidade</th>
+  </tr>
+  <tr>
+    <td>João</td>
+    <td>30</td>
+    <td>São Paulo</td>
+  </tr>
+  <tr>
+    <td>Maria</td>
+    <td>25</td>
+    <td>Rio de Janeiro</td>
+  </tr>
+</table>
+
+ Tag Breakdown
+
+<table>: Inicia a tabela
+
+<tr>: Cria uma linha (table row)
+
+<th>: Cabeçalho da tabela (table header)
+
+<td>: Célula de dados (table data)
+
+ Estilizando com CSS (opcional)
+
+html
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+This will give your table a clean, professional look. If you want to explore more advanced features like merging cells (colspan, rowspan) or adding captions, check out W3Schools' HTML Tables guide or MDN's table tutorial.
+-->
+
+<table><!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table -->
+    <caption><!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/caption -->
+        Produtos
+    </caption>
+    <thead><!-- https://www.w3schools.com/tags/tag_thead.asp
+                https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/thead
+            -->
+        <tr> <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tr -->
+            <th><!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/th -->
+                Produto
+            </th>
+            <th>
+                Preço
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+    </thead>
+
+    <tbody><!--https://www.w3schools.com/tags/tag_tbody.asp
+            https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tbody
+        -->
+        <tr>
+            <td><!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/td -->
+                iPad
+            </td>
+            <td>
+                3289,00
+            </td>
+            <td>
+                5
+            </td>
+            <td>
+                16445,00
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Samsung S9
+            </td>
+            <td>
+                2649,00
+            </td>
+            <td>
+                8
+            </td>
+            <td>
+                21192,00
+            </td>
+        </tr>
+    </tbody>
+    <tfoot><!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tfoot -->
+        <tr>
+            <!-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/colSpan
+
+            -->
+            <td colspan="3">
+                Total
+            </td>
+            <td>
+                37637,00
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        border: 1px solid #333;
+        padding: 10px;
+        text-align: left;
+    }
+
+    thead {
+        border-bottom: solid 3px #444;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>
