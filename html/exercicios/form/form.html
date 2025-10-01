@@ -1,8 +1,73 @@
-<!-- AULA 225 Formulario e servidor express-->
+<!-- AULA 225, 226, Formulario e servidor express
+
+ See the links below for more details:
+
+ https://www.w3schools.com/html/html_forms.asp
+
+ https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Extensions/Forms/Your_first_form
+-->
 
 <h1>Formulário</h1>
 
 <form action="http://localhost:3003/usuarios" method="POST">
     <input type="text" name="nome" placeholder="Nome">
+    <input type="password" name="senha" placeholder="Senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+
+    </div>
+    <div>
+        <input type="checkbox" name="ativo" value="sim"> Ativo
+    </div>
+    <!-- https://www.w3schools.com/tags/tag_select.asp
+         https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/select  
+
+    -->
+    <select name="'estado">
+        <option value="">Selecione</option>
+        <option value="SP">São Paulo</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="ES">Espirito Santo</option>
+        <option value="BA">Bahia</option>
+    </select>
+
+    <select name="interesses" multiple size="5">
+        <option value="JS">Javascript</option>
+        <option value="JAVA">Java</option>
+        <option value="PHP">PHP</option>
+        <option value="PYTHON">Python</option>
+        <option value="GOLANG">Golang</option>
+        <option value="C#">CSharp</option>
+    </select>
+
     <button type="submit">Salvar</button>
 </form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline-block;
+
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+</style>
