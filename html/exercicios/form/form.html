@@ -1,15 +1,24 @@
-<!-- AULA 225, 226, Formulario e servidor express
+<!-- AULA 225, 226, 227, Formulario 1, 2 e 3 e servidor express
 
  See the links below for more details:
 
  https://www.w3schools.com/html/html_forms.asp
 
  https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Extensions/Forms/Your_first_form
--->
+
+ https://www.w3schools.com/TAGS/att_formaction.asp
+
+ https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/formAction
+
+https://www.w3schools.com/tags/att_form_method.asp
+
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data
+ -->
 
 <h1>Formulário</h1>
 
-<form action="http://localhost:3003/usuarios" method="POST">
+<form method="POST">
+    <input type="hidden" name="id" value="3">
     <input type="text" name="nome" placeholder="Nome">
     <input type="password" name="senha" placeholder="Senha">
     <textarea name="bio" cols="30" rows="10"></textarea>
@@ -44,7 +53,8 @@
         <option value="C#">CSharp</option>
     </select>
 
-    <button type="submit">Salvar</button>
+    <button type="submit" formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button type="submit" formaction="http://localhost:3003/usuarios/3">Alterar</button>
 </form>
 
 <style>

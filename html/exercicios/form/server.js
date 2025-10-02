@@ -1,4 +1,4 @@
-// AULA 225 - Formulários - Servidor
+// AULA 225, 227 - Formulários - Servidor
 // See the link: https://expressjs.com/
 // npm install express --save
 const express = require('express')
@@ -13,6 +13,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.post('/usuarios', (req, res) => {
     console.log(req.body)
     res.send('<h1>Parabéns. Usuário Incluído</h1>')
+})
+app.post('/usuarios', (req, res) => {
+    console.log(req.params.id)
+    console.log(req.body)
+    res.send('<h1>Parabéns. Usuário Alterado</h1>')
 })
 
 app.listen(3003, () => {
