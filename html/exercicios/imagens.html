@@ -1,4 +1,4 @@
-<!-- AULA 228 Imagens <img>
+<!-- AULA 228 -Imagens, AULA 229 Desafio <img>
  See the links below for image sources:
  
  https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/img
@@ -30,6 +30,7 @@ Mais uma vez, roubar a largura de banda de alguém é ilegal.
 Ele também torna a página mais lenta, deixando você sem controle sobre se a imagem é removida 
 ou substituída por algo embaraçoso.
 -->
+
 <div wm-slider>
     Imagens
     <p>
@@ -65,6 +66,11 @@ ou substituída por algo embaraçoso.
     </p>
 </div>
 <style>
+    p {
+        position: absolute;
+        display: none
+    }
+
     .circular {
         width: 513px;
         background-color: #444;
@@ -80,7 +86,7 @@ ou substituída por algo embaraçoso.
 
     .texto img {
         margin-right: 10px;
-        border-radius: 50%;
+
     }
 
     .cidade {
@@ -92,3 +98,22 @@ ou substituída por algo embaraçoso.
         background-size: 200%;
     }
 </style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+
+    const p = document.querySelector('[wm-slider] p')
+    p.style.display = 'block'
+    mover(p, 1500, -520, 5, () => {
+        console.log('Animação concluída')
+    })
+
+</script>
