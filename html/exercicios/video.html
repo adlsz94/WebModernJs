@@ -1,0 +1,119 @@
+<!-- AULA 231 Video
+ 
+See the links below for reference:
+
+video tag:
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/video
+
+https://www.w3schools.com/html/html5_video.asp
+
+source tag:
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/source
+
+https://www.w3schools.com/TAGs/tag_source.asp
+
+progress tag:
+https://www.w3schools.com/TAgs/tag_progress.asp
+
+controlsList attribute:
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controlsList
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo</title>
+</head>
+
+<body>
+    <!--
+        <div class="areaDeVideo" text-align="center">
+            <h1>Videos</h1>
+            <button onclick="playPause()">Play/Pause</button>
+            <button onclick="makeBig()">Big</button>
+            <button onclick="makeSmall()">Small</button>
+            <button onclick="makeNormal()">Normal</button>
+            <br><br>
+-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controlsList-->
+    <!--        <video id="meuVideo" width="420" height="450" controls autoplay muted controlsList="nodownload">
+            <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+        <br><br>
+
+        <div wm-progresso="meuVideo" class="progresso">
+            
+                <progress value="0" max="100" class="progresso"></progress>
+        
+            <div></div>
+        </div>
+        <button wm-play=<div>
+
+    </div>
+    </div>
+-->
+    <!--
+        <script>
+            let video = document.getElementById("meuVideo");
+    
+            function playPause() {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+    
+            function makeBig() {
+                video.width = 800;
+            }
+            function makeSmall() {
+                video.width = 320;
+            }
+            function makeNormal() {
+                video.width = 420;
+            }
+        </script>
+-->
+
+    <video id="meuVideo" width="800" height="450" controls autoplay muted controlsList="nodownload">
+        <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+        Seu browser não suporta a tag de vídeo.
+    </video>
+
+    <div wm-progresso="meuVideo" class="progresso">
+        <div></div>
+    </div>
+
+    <div>
+        <button wm-play="meuVideo">Play</button>
+        <button wm-pause="meuVideo">Pause</button>
+    </div>
+
+    <style>
+        .progresso {
+            height: 20px;
+            width: 500px;
+            border: solid 1px #444;
+            margin: 20px;
+        }
+
+        .progresso>div {
+            background-color: red;
+            color: #fff;
+            height: 100%;
+            text-align: right;
+            font-size: 14px;
+            width: 0%;
+        }
+    </style>
+
+</body>
+
+</html>
