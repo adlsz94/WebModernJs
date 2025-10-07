@@ -1,0 +1,70 @@
+<h1>Tags Não Visuais</h1>
+
+<!-- AULA 233 TAGS NÃO VISUAIS
+
+SEE THE LINKS BELOW:
+
+https://www.w3schools.com/Tags/tag_div.asp
+
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/div
+
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/section
+
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/article
+
+https://www.w3schools.com/TAGS/tag_article.asp
+
+
+
+Tags Semânticas...
+
+<section> - agrupamento temático de conteúdo, normalmente com um título.
+<article> - conteúdo independente, como um artigo de revista ou jornal.    
+<header> - cabeçalho de uma seção ou página.
+<footer> - rodapé de uma seção ou página.
+<nav> - seção de navegação, links para outras páginas ou partes da página.
+<aside> - conteúdo relacionado, como uma barra lateral ou caixa de informações.
+<detail> - detalhes adicionais que o usuário pode expandir ou recolher.
+
+AS FAMOSAS TAGS <div> E <span>
+
+<div> - contêiner genérico para agrupar elementos em bloco, usado para layout e estilização.
+<span> - contêiner genérico para agrupar elementos em linha, usado para estilização de partes específicas do texto.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags Não Visuais</title>
+</head>
+
+<body>
+    <div>Área 1</div>
+    <div>Área 2</div>
+
+    <p>
+        Esse é um texto com <span class="diferente">muitas palavras</span> e ponto
+    </p>
+
+    <style>
+        div {
+            display: inline;
+        }
+
+        span {
+            display: block
+        }
+
+        .diferente {
+            font-weight: bold;
+            font-size: 30px;
+            color: chocolate;
+        }
+    </style>
+</body>
+
+</html>
