@@ -1,11 +1,51 @@
+<!--AULA 237 Anatomia CSS-->
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <title>Anatomia CSS</title>
     <style>
         /* ... */
+        .selector {
+            color: #222;
+            font-size: 30px;
+            text-align: center;
+            /* mumtiplos valores*/
+            border: solid 5px navy;
+            /* shorthand property */
+            font-family: Helvetica, sans-serif;
+            /* Funções */
+            width: calc(100% - 40px);
+            background-color: rgb(34, 153, 189);
+        }
+
+        /* Usando uma pseudo-classe. 
+
+            See the links below:
+            https://www.w3schools.com/CSSref/sel_hover.phphttps://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+           
+            https://developer.mozilla.org/pt-BR/docs/Web/CSS/:hover
+            
+            https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+
+            https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child
+            Select and style a link when you mouse over it:
+            */
+        .selector:hover {
+            /* Pseudo classe :hover
+            https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes
+            */
+            background-color: orangered;
+        }
+
+        /* Usando um pseudo-elemento ::first-letter
+        See the links below:
+            https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elements
+        */
+        .selector::first-letter {
+            font-size: 60px;
+        }
     </style>
 </head>
 
