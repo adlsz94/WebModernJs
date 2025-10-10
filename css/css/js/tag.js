@@ -7,6 +7,8 @@ const colors = {
     span: '#e53935',
     section: '#f67809',
     ul: '#5e35b1',
+    ol: '#fbc02d',
+    header: '#d81b60',
     header: '#d81b60',
     nav: '#64dd17',
     main: '#00acc1',
