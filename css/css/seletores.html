@@ -1,44 +1,334 @@
+<!--AULA 241 SELETORES CSS-->
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <title>CSS Selectors</title>
-    <link rel="stylesheet" href="css/tag.css">
-    <style>
-        /* ... */
-    </style>
+  <meta charset="UTF-8">
+  <title>CSS Selectors</title>
+  <link rel="stylesheet" href="css/tag.css">
+  <style>
+    /* TIPOS DE SELETORES CSS
+
+        SEE THE LINKS BELOW:
+
+        https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_selectors
+
+        https://www.w3schools.com/cssref/css_selectors.php
+
+            Seletores CSS são usados para definir quais elementos HTML serão estilizados por regras CSS. 
+            Eles permitem aplicar estilos de forma precisa e eficiente. Aqui está um resumo dos principais 
+            tipos de seletores:
+
+1. Seletores Simples
+
+
+Por Tipo (Tag): Seleciona elementos pelo nome da tag.
+Css
+p {
+  color: blue;
+}
+
+Aplica a cor azul a todos os <p>.
+
+
+Por Classe: Seleciona elementos com uma classe específica.
+Css
+.highlight {
+  background-color: yellow;
+}
+
+Aplica fundo amarelo a elementos com a classe highlight.
+
+
+Por ID: Seleciona um elemento com um ID específico.
+Css
+#header {
+  font-size: 20px;
+}
+
+Define o tamanho da fonte para o elemento com ID header.
+
+
+Universal (*): Seleciona todos os elementos.
+Css
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+2. Seletores Combinadores
+
+
+Descendente (Espaço): Seleciona elementos dentro de outro.
+Css
+div p {
+  color: red;
+}
+
+Aplica cor vermelha a <p> dentro de <div>.
+
+
+Filho Direto (> ): Seleciona apenas filhos diretos.
+Css
+div > p {
+  font-weight: bold;
+}
+
+
+
+Irmão Adjacente (+): Seleciona o próximo elemento irmão.
+Css
+h1 + p {
+  font-style: italic;
+}
+
+
+
+Irmão Geral (~): Seleciona todos os irmãos seguintes.
+Css
+h1 ~ p {
+  color: green;
+}
+
+
+
+
+3. Seletores de Atributos
+
+
+Presença de Atributo:
+Css
+[title] {
+  border: 1px solid black;
+}
+
+
+
+Valor Específico:
+Css
+[type="text"] {
+  background-color: lightgray;
+}
+
+[feira*=asa] {
+  color: #ff0;
+  background-color: #f77;
+}
+
+[feira~=asa] {
+  color: #ff0;
+  background-color: #f77;
+}
+
+span:nth-child(1) {// Seleciona o primeiro filho do span
+  color: #ff0;
+  background-color: #f77;
+}
+
+section > :nth-child(odd) {
+  color: #ff0;
+  background-color: #f77;
+}
+section > :nth-child(even) {
+  color: #ff0;
+  background-color: #f77;
+}
+
+section > :nth-child(odd) label {
+  color: #ff0;
+  background-color: #f77;
+}
+
+
+
+
+}
+
+
+
+Valor Contendo Substring:
+Css
+[href*="example"] {
+  color: purple;
+}
+
+
+
+
+4. Pseudo-classes
+
+
+Estado do Elemento:
+Css
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+Posição:
+Css
+li:first-child {
+  font-weight: bold;
+}
+
+
+
+
+5. Pseudo-elementos
+
+Parte de um Elemento:
+Css
+p::first-line {
+  font-size: larger;
+}
+
+Tipos de seletores relacionados a filhos
+1. Child Selector (>)
+Seleciona apenas os filhos diretos de um elemento.
+
+css
+ul > li {
+  color: red;
+}
+Esse exemplo estiliza apenas os <li> que são filhos diretos de um <ul>, ignorando <li>s aninhados mais profundamente.
+
+2. Descendant Selector (espaço)
+Seleciona todos os descendentes, incluindo filhos, netos, bisnetos...
+
+css
+ul li {
+  color: blue;
+}
+Aqui, todos os <li> dentro de um <ul> serão estilizados, independentemente da profundidade.
+
+3. :first-child / :last-child
+Seleciona o primeiro ou último filho de um elemento.
+
+css
+p:first-child {
+  font-weight: bold;
+}
+4. :nth-child(n)
+Seleciona o filho de acordo com sua posição.
+
+css
+li:nth-child(2) {
+  background-color: yellow;
+}
+Estiliza o segundo <li> dentro de seu pai.
+
+5. :only-child
+Seleciona um elemento que é o único filho de seu pai.
+
+css
+div:only-child {
+  border: 1px solid green;
+}
+
+CSS Nesting Selector (&) 
+ ´É uma funcionalidade que permite organizar e simplificar o código CSS ao aninhar regras de 
+ estilo dentro de um contexto específico. Ele é especialmente útil para evitar a repetição de 
+ seletores e tornar o código mais legível e fácil de manter.
+ 
+Como funciona o Nesting (&) no CSS
+
+ O operador & é usado para referenciar o elemento pai no contexto do aninhamento. 
+ Isso significa que as regras dentro do bloco aninhado são relativas ao seletor pai.
+
+Exemplo de uso básico
+
+Css
+.button {
+  color: white;
+  background-color: blue;
+
+  &.active {
+    background-color: green;
+  }
+
+  &:hover {
+    background-color: darkblue;
+  }
+}
+
+ Explicação:
+
+ .button define o estilo base.
+ &.active aplica estilos quando o botão tem a classe active.
+ &:hover aplica estilos ao passar o mouse sobre o botão.
+
+ Benefícios do Nesting
+
+ Redução de repetição: Não é necessário reescrever o seletor pai.
+ Organização: Facilita a leitura e manutenção do código.
+ Escopo claro: As regras ficam agrupadas de forma lógica.
+
+ Compatibilidade
+
+ O suporte ao CSS Nesting ainda está em desenvolvimento em alguns navegadores. 
+ Para garantir compatibilidade, é comum usar pré-processadores como Sass ou PostCSS, 
+ que já oferecem suporte ao aninhamento.
+ Se você estiver usando um pré-processador, o código pode ser escrito assim:
+Scss
+.button {
+  color: white;
+  background-color: blue;
+
+  &.active {
+    background-color: green;
+  }
+
+  &:hover {
+    background-color: darkblue;
+  }
+}
+
+Se estiver utilizando CSS puro, verifique a documentação do navegador para confirmar o suporte.
+
+
+*/
+    section>span:nth-of-type(2) {
+      /* Começa a partir do 1*/
+      color: #ff0;
+      background-color: #f77;
+    }
+  </style>
 </head>
 
 <body>
+  <div class='tag'>
     <div class='tag'>
-        <div class='tag'>
-            <p class='tag'>1</p>
-            <ul class='tag' feira='casa'>
-                <li>Arroz</li>
-                <li>Feijão</li>
-            </ul>
-            <ul class='tag' feira='escritorio empresa'>
-                <li>Café</li>
-                <li>Água</li>
-            </ul>
-            <ol id='aprovados' class='tag'>
-                <li>Maria</li>
-                <li>Pedro</li>
-                <li>Ana</li>
-            </ol>
-            <div id='aninhado' class='tag'>
-                <div class="tag">
-                    <section class='tag'>
-                        <span class='tag'>1</span>
-                        <p class='tag'>2</p>
-                        <span class='tag'>3</span>
-                    </section>
-                </div>
-            </div>
+      <p class='tag'>1</p>
+      <ul class='tag' feira='casa'>
+        <li>Arroz</li>
+        <li>Feijão</li>
+      </ul>
+      <ul class='tag' feira='escritorio empresa'>
+        <li>Café</li>
+        <li>Água</li>
+      </ul>
+      <ol id='aprovados' class='tag'>
+        <li>Maria</li>
+        <li>Pedro</li>
+        <li>Ana</li>
+      </ol>
+      <div id='aninhado' class='tag'>
+        <div class="tag">
+          <section class='tag'>
+            <span class='tag'>1</span>
+            <p class='tag'>2</p>
+            <span class='tag'>3</span>
+          </section>
         </div>
+      </div>
     </div>
-    <script src="js/tag.js"></script>
+  </div>
+  <script src="js/tag.js"></script>
 </body>
 
 </html>
