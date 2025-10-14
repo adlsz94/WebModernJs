@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -25,13 +25,89 @@
 
         .mt30 {
             margin-top: 30px;
+            position: absolute;
+            display: inline-block
         }
 
         /* 
-            float: left / right
-            position: absolute
-            display: inline-block
-        */
+        float: left / right
+        position: absolute
+        display: inline-block
+
+        OBS.: Em algumas situações, as margens
+        de alguns componentes poderão se sobrepor.
+        Para evitar isso, use:
+
+        position: absolute;
+        display: inline-block;
+        posição absoluta,
+        display inline block ou float.
+
+        A sobreposição de margens em CSS — conhecida como *margin collapsing*
+
+       — é um comportamento padrão que pode causar confusão ao organizar o layout. 
+         Aqui vão algumas dicas práticas para evitar esse problema:
+
+         ###  O que é *margin collapsing*?
+
+         Quando dois elementos com margens verticais se encontram (por exemplo, 
+         `margin-bottom` de um e `margin-top` de outro), o navegador não soma 
+         as margens — ele usa apenas a maior delas.
+
+         ---
+
+         ###  Como evitar a sobreposição de margens
+
+        - **Use `padding` em vez de `margin` em elementos pai**
+        - O `padding` não colapsa com margens internas, então é uma alternativa 
+          segura para espaçamento.
+
+        - **Adicione bordas ou conteúdo entre os elementos**
+
+        - Uma borda (`border`) ou até um elemento vazio (`<div></div>`) 
+        entre os componentes impede o colapso.
+
+        - **Evite margens verticais entre elementos pai e filho**
+
+        - Margens entre um elemento pai e seu primeiro ou último filho 
+        podem colapsar. Uma solução é aplicar `overflow: hidden` no pai.
+
+        - **Use `display: inline-block` ou `flex`**
+
+        - Elementos com `display: flex` ou `inline-block` não sofrem colapso 
+        de margens da mesma forma que os blocos padrão (`block`).
+
+        - **Aplicar `overflow: auto` ou `overflow: hidden`**
+
+        - Isso força o navegador a criar um novo contexto de formatação, 
+        evitando o colapso.
+
+        ---
+
+        ### 📌 Exemplo prático
+
+        ```
+        css
+        
+    .container {
+         overflow: hidden; }/* Evita margin collapsing
+         }
+
+
+
+.box {
+  margin: 10px 0;
+}
+
+```
+Fontes: 
+
+[deMenezes.dev]
+(https://demenezes.dev/posts/margin-collapsing-css/) 
+
+[Stack Overflow]
+(https://pt.stackoverflow.com/questions/1706/margin-top-e-margin-bottom-se-sobrepondo-por-qu%c3%aa)
+*/
     </style>
 </head>
 

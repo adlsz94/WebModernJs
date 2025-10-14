@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        /* ...
+        SEE THE LINKS BELOW:
+
+        https://www.w3schools.com/csS/css3_flexbox.asp
+
+        https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+        https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/CSS_layout/Flexbox
+
+        Se você quer usar o flexbox, você vai usar o 'display: flex';
+        Se você quer usar o CSS Grid, você vai usar o 'display: grid';
+
+         */
+
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        li {
+            background-color: purple;
+        }
+
+        div,
+        span,
+        li {
+            width: 50%;
+            width: 200px;
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            display: inline;
+            display: block;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -21,3 +68,83 @@
 </body>
 
 </html>
+
+<!--
+    Display CSS
+    Claro, ADELSON! Vamos mergulhar fundo na propriedade `display` do CSS 
+    — uma das mais fundamentais e poderosas para controlar o layout de 
+    elementos na página.
+
+---
+
+## 🧱 O que é `display`?
+
+A propriedade `display` define **como um elemento HTML será renderizado** 
+na página — se ele será tratado como um bloco, inline, flexível, grid, etc. 
+Ela afeta tanto o **comportamento externo** (como o elemento interage com os outros) 
+quanto o **layout interno** (como seus filhos são organizados).
+
+---
+
+## 📦 Tipos principais de `display`
+
+| Valor            | Comportamento                                                                 |
+|------------------|--------------------------------------------------------------------------------|
+| `block`          | Ocupa toda a largura disponível. Começa em nova linha. Ex: `<div>`, `<p>`     |
+| `inline`         | Ocupa apenas o espaço necessário. Não quebra linha. Ex: `<span>`, `<a>`       |
+| `inline-block`   | Mistura dos dois: inline, mas aceita largura/altura como block                |
+| `none`           | Oculta o elemento completamente (não ocupa espaço)                            |
+| `flex`           | Ativa o modelo Flexbox para layout flexível dos filhos                        |
+| `inline-flex`    | Flexbox com comportamento inline                                               |
+| `grid`           | Ativa o modelo Grid para layout em linhas e colunas                           |
+| `inline-grid`    | Grid com comportamento inline                                                  |
+| `contents`       | Remove a caixa do elemento, mas mantém os filhos visíveis                     |
+| `table`, `table-row`, etc | Simula comportamento de elementos de tabela                          |
+
+---
+
+## 🧭 Exemplos práticos
+
+```css
+/* Exemplo de bloco */
+div {
+  display: block;
+}
+
+/* Exemplo inline */
+span {
+  display: inline;
+}
+
+/* Flexbox */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+```
+
+---
+
+## ⚠️ Dicas importantes
+
+- `display: none` é diferente de `visibility: hidden`: o primeiro **remove** o elemento do fluxo, o segundo apenas **oculta**.
+- `inline` não aceita `width`, `height`, `margin-top` ou `margin-bottom`.
+- `inline-block` é ótimo para botões e menus horizontais.
+- `flex` e `grid` são ideais para layouts modernos e responsivos.
+
+---
+
+## 📚 Quer se aprofundar?
+
+- [Documentação MDN sobre display](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
+- [Guia completo de Flexbox da Origamid](https://www.origamid.com/projetos/flexbox-guia-completo/)
+- [Referência CSS do W3Schools](https://www.w3schools.com/cssref/pr_class_display.php)
+
+-->
