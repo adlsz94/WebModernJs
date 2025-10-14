@@ -28,6 +28,7 @@
         .menu-principal {
             min-width: 400px;
             text-align: center;
+            font-size: 0%;
         }
 
         .menu-principal h1 {
@@ -36,12 +37,14 @@
             border-bottom: solid 5px #4faddb;
             padding: 15px 0px;
             margin: 0;
+            font-size: 50px;
         }
 
         .menu-principal nav {
             display: inline-block;
             background-color: #fff;
-            min-width: 198px;
+            min-width: 200px;
+            font-size: 15px;
         }
 
         .menu-principal a {
@@ -78,7 +81,8 @@
                 <a href="./tamanhoBox.html">Box Sizing</a>
                 <a href="./overflow.html">Overflow</a>
                 <a href="./float.html">Float</a>
-            </nav>
+            </nav><!--comentário para remover espaço entre as tgas nav
+            -->
             <nav>
                 <a href="./cores.html">Cores</a>
                 <a href="./unidades1.html">Unidades #01</a>
@@ -101,3 +105,90 @@
 </body>
 
 </html>
+
+<!--Display
+
+SEE THE LINKS BELOW:
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/display
+-->
+<!--
+    Erros comuns com inline-block
+
+1. Espaços entre elementos
+
+Elementos inline-block respeitam espaços em branco no HTML.
+
+Isso pode causar espaçamento indesejado entre os blocos.
+
+Solução:
+
+Remover espaços no HTML (colando as tags).
+
+Usar comentários para quebrar o espaço.
+
+Aplicar font-size: 0 no elemento pai.
+
+-->
+
+<!---->
+
+html
+<!-- Espaço indesejado -->
+<!--
+<div class="box"></div> <div class="box"></div>
+-->
+<!-- Solução com font-size -->
+<!-- 
+.container {
+  font-size: 0;
+}
+.box {
+  display: inline-block;
+  font-size: 16px; /* volta ao normal */
+}
+2. Alinhamento vertical inesperado
+Por padrão, inline-block alinha os elementos pela linha de base do texto.
+
+Solução:
+
+Use vertical-align: top, middle, ou bottom conforme necessário.
+
+css
+.box {
+  display: inline-block;
+  vertical-align: top;
+}
+3. Margens e preenchimento inconsistentes
+Como inline-block é tratado como texto, margens verticais podem se comportar de forma estranha.
+
+Solução:
+
+Testar com box-sizing: border-box para controle total.
+
+Usar display: flex como alternativa moderna.
+
+4. Quebra de linha inesperada
+Se o conteúdo interno for maior que o espaço disponível, o bloco pode "cair" para a linha de baixo.
+
+Solução:
+
+Definir largura máxima (max-width) ou usar white-space: nowrap no pai.
+
+5. Diferenças entre navegadores
+Alguns navegadores interpretam inline-block de forma ligeiramente diferente, especialmente em elementos sem conteúdo.
+
+Solução:
+
+Testar com min-height, min-width, ou adicionar conteúdo invisível (&nbsp;).
+
+✅ Alternativas modernas
+Use display: flex ou grid para layouts mais previsíveis e responsivos.
+
+inline-block ainda é útil para botões, menus horizontais e elementos simples.
+
+Se quiser, posso revisar seu código e sugerir melhorias específicas. Ou te mostrar como converter um layout inline-block para flex. Só dizer!
+
+Fontes: Stack Overflow, ICHI.PRO, GeekHunter Blog
+
+-->

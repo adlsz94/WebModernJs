@@ -1,13 +1,22 @@
+<!--AULA 250 ALTURA E LARGURA-->
+
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
             font-size: 40px;
             background-color: coral;
+            height: 100%;
+            margin: 0;
         }
 
         div {
@@ -17,12 +26,124 @@
         span {
             background-color: dodgerblue;
         }
+
+        span,
+        div {
+            width: 50%;
+            height: 250px;
+            height: 50%;
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <div>Título</div>
     <span>Subtítulo</span>
+
 </body>
 
 </html>
+
+<!--
+    OBSERVAÇÃO DO PROFESSOR: De maneira geral, num comportamento padrão,
+    altura percentual(height: 50%) só fará diferença de acordo com o parent.
+    Se o parent for curto e já estiver ocupando toda a altura, o percentual de 
+    altura não vai fazer nenhuma diferença, porque a tag body e a tag html por
+    padrão, têm a altura(height) que é equivalente ao tamando dos seu elementos.
+    Tamanhos absolutos fazem com que o body e o html cresça, mas tamanhos relativos 
+    temos que prestar atenção em colocar os percentuais até chegar no html, para 
+    ter espaço para crescer.
+    DISPLAY: INLINE - Não considera a altura(height) e a largura(width).
+    DISPLAY: BLOCK OR INLINE-BLOCK - considera a altura(height) e largura(width).
+    Devemos ter este cuidado.
+
+
+    Erros comuns com width e height no CSS
+
+    1. Usar valores fixos em layouts responsivos
+    Definir width: 1000px ou height: 500px pode quebrar o layout em telas menores.
+
+    Solução: Use unidades relativas como %, vw, vh, ou em.
+
+    css
+
+    .container {
+            width: 80%; /* melhor para responsividade */
+            height: 50vh; /* metade da altura da tela */
+    }
+
+    2. Não considerar o box-sizing
+
+    Por padrão, width e height não incluem padding e border, o que pode causar estouro de layout.
+
+    Solução: Use box-sizing: border-box.
+
+    css
+
+    * {
+        box-sizing: border-box;
+    }
+
+    3. Altura com porcentagem sem altura definida no pai
+
+    height: 100% só funciona se o elemento pai tiver altura definida.
+
+    Solução: Defina altura no pai ou use min-height.
+
+    css
+
+    html, body {
+        height: 100%;
+    }
+
+    .section {
+        height: 100%; /* agora funciona */
+    }
+
+    4. Elementos inline não respeitam width e height
+
+    Elementos com display: inline ignoram essas propriedades.
+
+    Solução: Use inline-block, block, flex, ou grid.
+
+    5. Confusão entre min-height, max-height e height
+
+    min-height e max-height podem sobrescrever height.
+
+    Exemplo:
+
+    css
+    .box {
+        height: 200px;
+        max-height: 150px; /* altura final será 150px */
+    }
+    
+    6. Não usar overflow quando necessário
+
+
+    Elementos com altura fixa podem cortar conteúdo.
+
+    Solução: Use overflow: auto ou scroll.
+
+    css
+
+    .box {
+        height: 300px;
+        overflow: auto;
+    }
+    
+    Fontes e leitura recomendada:
+
+    Guia completo sobre height no MDN:
+
+        https://developer.mozilla.org/pt-BR/docs/Web/CSS/height
+
+    Tutorial sobre largura e altura no CSS:
+
+        https://www.tutkit.com/pt/tutoriais-de-texto/13296-definindo-largura-e-altura-em-html-e-css
+
+    Discussão sobre altura igual à largura no Stack Overflow:
+
+        https://pt.stackoverflow.com/questions/213507/deixando-a-altura-da-div-igual-a-largura-usando-somente-css
+-->
