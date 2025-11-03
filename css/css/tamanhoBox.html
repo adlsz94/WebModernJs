@@ -1,17 +1,43 @@
+<!--AULA 251 BOX SIZING
+SEE THE LINKS BELOW FOR MORE DETAILS:
+
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference/Properties/box-sizing
+
+https://www.w3schools.com/csS/css3_box-sizing.asp
+
+-->
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-size: 45px;
+            margin: 0;
+        }
+
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: solid 20px;
+            /*content-box (default) | border-box | padding-box (não suportado por todos os browsers) */
         }
     </style>
 </head>
+
 <body>
     <div>
         O tamanho do Box é...
     </div>
 </body>
+
 </html>
