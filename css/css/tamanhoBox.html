@@ -5,6 +5,94 @@ https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference/Properties/box-sizing
 
 https://www.w3schools.com/csS/css3_box-sizing.asp
 
+CSS Box Sizing
+
+The CSS property defines how to calculate the width and height of an element: 
+    should the calculation include padding and borders, or not.box-sizing
+
+By default, the width and height of an element is calculated like this:
+
+    width + padding + border = actual width of an element
+    height + padding + border = actual height of an element
+
+This means: When you set the width/height of an element, the element often appears 
+bigger than you have set (because the element's border and padding are added to the 
+element's specified width/height).
+
+The following illustrates two <div> elements with the same specified width and height. 
+The two <div> elements end up with different sizes (because div2 has a large padding specified):
+
+This div is has width: 300px and height: 100px.
+
+This div also has width: 300px and height: 100px.
+
+Example
+
+.div1 {
+  width: 300px;
+  height: 100px;
+  border: 1px solid blue;
+}
+
+.div2 {
+  width: 300px;
+  height: 100px;
+  padding: 50px;
+  border: 1px solid red;
+}
+
+The property solves this problem.box-sizing
+
+The CSS box-sizing Solution
+
+The property allows us to include the padding and border in an element's total 
+width and height.box-sizing
+
+If you set on an element, the padding and border are included in the calculation 
+of the width and height:box-sizing: border-box;
+
+Both divs are the same size now!
+
+    Hooray!
+
+
+Here is the same example as above, with added to both <div> elements:box-sizing: border-box;
+
+Example
+.div1 {
+  width: 300px;
+  height: 100px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+}
+
+.div2 {
+  width: 300px;
+  height: 100px;
+  padding: 50px;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+Since the result of using the is so much better, many developers want all elements 
+on their pages to work this way.box-sizing: border-box;
+
+The code below ensures that all elements are sized in this more intuitive way. 
+Many browsers already use for many form elements (but not all - which is why inputs 
+and text areas look different at width: 100%;). box-sizing: border-box;
+
+Applying this to all elements is safe and wise:
+
+* {
+  box-sizing: border-box;
+}
+
+CSS Box Sizing Property
+Property	    Description
+box-sizing	    Defines how the width and height of an element are calculated: 
+                should they include padding and borders, or not
+
+
 -->
 
 <!DOCTYPE html>
