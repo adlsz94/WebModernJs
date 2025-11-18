@@ -59,6 +59,220 @@ https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference/Properties/float
 </html>
 
 <!--
+Resumo
 
+A propriedade float do CSS determina que um elemento deve ser retirado do seu 
+fluxo normal e colocado ao longo do lado direito ou esquerdo do seu containêr, 
+onde textos e elementos em linha irão se posicionar ao seu redor.
+
+Um elemento flutuante é um tipo de elemento cujo valor de float é diferente de none.
+
+Initial value	    none
+Aplica-se a	        all elements, but has no effect if the value of display is none.
+Inherited	        não
+Computed value	    as specified
+Animation type	    discrete
+
+
+
+Como float implica o uso the block layout, ele modifica o valor computado 
+de display em alguns casos:
+
+Valor Especificado	    Valor Computado
+inline	                block
+inline-block	        block
+inline-table	        table
+table-row	            block
+table-row-group	        block
+table-column	        block
+table-column-group	    block
+table-cell	            block
+table-caption	        block
+table-header-group	    block
+table-footer-group	    block
+flex	                flex, porém float não produz efeito em tais elementos
+inline-flex	            inline-flex, porém float não produz efeito em tais elementos
+other	                unchanged
+
+Nota: Se você está se referindo a essa propriedade do Javascript como um membro do 
+objeto element.style, você deve referir-se a cssFloat. Observe também que as versões
+8 e posteriores referem-se a styleFloat. 
+Esta é uma exceção à regra de que o nome do membro DOM é o nome em estilo camel-case 
+do nome CSS separado por traço (e se deve ao fato de que "float" é uma palavra reservada 
+em Javascript, tal qual a necessidade de especificar "class" como "className" e "for" 
+como "htmlFor").
+
+In this article
+Resumo
+Sintaxe
+Exemplos
+Especificações
+Compatibilidade com navegadores
+Veja também
+AWS
+Explore AWS's generative AI offerings
+AWS offers a range of generative AI services to help developers innovate faster.
+Learn More
+Ad
+
+Sintaxe
+
+css
+
+Copy
+float: left;
+float: right;
+float: none;
+float: inline-start;
+float: inline-end;
+
+/* Global values */
+float: inherit;
+float: initial;
+float: unset;
+Valores
+
+left
+    É uma palavra-chave que indica que o elemento deve flutuar à esquerda do bloco.
+
+right
+    É uma palavra-chave que indica que o elemento deve flutuar à direita do bloco.
+
+none
+    É uma palavra-chave que indica que o elemtno não deve flutuar.
+
+inline-start Experimental
+    É uma palavra-chave que indica que o elemento deve flutuar no lado inicial do 
+    seu bloco, ou seja, o lado esquerdo em scripts ltr e no direito em scripts rtl.
+
+inline-end Experimental
+    É uma palavra-chave que indica que o elemento deve flutuar no lado final do seu 
+    bloco, ou seja, o lado direito em scripts ltr e no esquerdo em scripts rtl.
+
+Sintaxe Formal
+
+float = 
+  block-start      |
+  block-end        |
+  inline-start     |
+  inline-end       |
+  snap-block       |
+  <snap-block()>   |
+  snap-inline      |
+  <snap-inline()>  |
+  left             |
+  right            |
+  top              |
+  bottom           |
+  none             |
+  footnote         
+
+<snap-block()> = 
+  snap-block( <length> , [ start | end | near ]? )  
+
+<snap-inline()> = 
+  snap-inline( <length> , [ left | right | near ]? )
+
+Esta sintaxe reflete o padrão mais recente conforme CSS Page Floats. 
+Nem todos os navegadores podem ter implementado todas as partes. 
+Consulte Compatibilidade do navegador para informações de suporte.
+
+Exemplos
+
+CSS
+
+div {
+  border: solid red;
+  max-width: 70ex;
+}
+h4 {
+  float: left;
+  margin: 0;
+}
+HTML
+
+html
+
+<div>
+  <h4>HELLO!</h4>
+  This is some text. This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text. This is some text.
+</div>
+
+Como floats são posicionados
+
+Como mencionado acima, quando um elemento é flutuado ele é retirado do seu 
+fluxo normal no documento. Ele é reposicionado à esquerda ou à direita até 
+tocar a borda do seu próprio box ou outro elemento flutuante.
+
+Na imagem "floats_css", localizada na pasta "assets", existem 3 quadrados vermelho. 
+Dois flutuando à esquerda e um flutuando à direita. 
+Observe que o segundo quadrado vermelho à esquerda é posicionado à direita do primeiro.
+Quadrados adicionais poderiam continuar sendo empilhados à direita até que eles 
+completassem o box, após isso eles iriam para próxima linha.
+
+Limpando floats
+
+No exemplo abaixo, os elementos flutuantes são menores verticalmente que o bloco 
+de texto com os quais estão flutuando. Apesar disso, se o texto não fosse comprido 
+o bastante para passar abaixo do limite inferior de todos os floats, nos veríamos 
+efeitos não previstos. 
+Se o parágrafo abaixo, por enquanto, somente lê "Lorem ipsum dolor sit amet,", 
+e fosse seguido por outro cabeçalho do mesmo estilo de cabeçaljo "Floats Example", 
+o segundo cabeçalho iria aparecer entre os dois boxes vermelhos. Muito provavelmente, 
+queremos que o próximo título seja alinhado à esquerda. 
+Para conseguir isso, precisamos limpar os floats.
+O jeito mais simples de limpar os floats neste exemplo é adicionar a propriedade 
+clear para o próximo cabeçalho que queremos assegurar que esteja alinhado à esquerda.
+SEE THE LINK BELOW ABOUT CLEAR PROPERTY:
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference/Properties/clear
+
+css
+
+h2.secondHeading {
+  clear: both;
+}
+
+Porém, este método apenas funciona se não existirem outros elementos com o mesmo block 
+formatting context
+( https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context )
+ aos quais nós queiramos que o cabeçalho continue aparecendo ao lado 
+horizontalmente. 
+Se o nosso H2 possui irmãos os quais são barras laterais flutuadas à esquerda e à direita, 
+usar clear irá forçá-lo a aparecer abaixo das duas barras laterais, o que provavelmente 
+não é o que queríamos.
+
+Se limpar floats em um elemento não é uma opção, uma outra abordagem é limitar o contexto 
+de formatação do bloco do containêr flutuante. Referindo-se ao exemplo acima novamente, 
+aparentemente todos os três quadrados vermelhos possuem um elemento paragrafo P . 
+Nós podemos atribuir a propiedade overflow - 
+( https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference/Properties/overflow ) - 
+neste paragrafo para hidden ou auto para obrigá-lo a expandir para contê-los, 
+porém não permitirá que os mesmos parágrafos pulem fora do limite inferior.
+
+css
+
+p.withRedBoxes {
+  overflow: hidden;
+  height: auto;
+}
+
+Nota: Atribuir overflow para scroll irá conter também qualquer elemento filho flutuante, 
+mas mostrará as barras de rolagem não importando o comprimento vertical do elemento. 
+Aqui nós estamos atribuindo height como auto mesmo sendo este o padrão para indicar que 
+o containêr deve crescer para acomodar seu conteúdo.
+
+Especificações
+
+Specification
+
+Cascading Style Sheets Level 2  https://drafts.csswg.org/css2/#propdef-float
+
+# propdef-float                 https://drafts.csswg.org/css2/#propdef-float
+
+CSS Logical Properties and Values Level 1 
+
+# float-clear                   https://drafts.csswg.org/css-logical/#float-clear
 
 -->
